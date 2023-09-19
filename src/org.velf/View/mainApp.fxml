@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorMain" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(silver,#fff);;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.velf.Controller.mainAppController">
+   <children>
+      <AnchorPane prefHeight="73.0" prefWidth="600.0" style="-fx-background-color: linear-gradient( lightblue,#2288FF);" stylesheets="@style.css">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="73.0" prefWidth="600.0" text="4CRYPT" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_volver" alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="14.0" prefHeight="29.0" prefWidth="58.0" text="Back" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS" underline="true" visible="false">
+               <padding>
+                  <Insets left="8.0" top="4.0" />
+               </padding>
+            </Label>
+         </children>
+      </AnchorPane>
+      <StackPane fx:id="stk_main" layoutX="90.0" layoutY="73.0" prefHeight="327.0" prefWidth="438.0" stylesheets="@style.css">
+         <children>
+            <VBox fx:id="stackMain" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="343.0" prefWidth="340.0" spacing="20.0" visible="false">
+               <padding>
+                  <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+               </padding>
+               <children>
+                  <Button fx:id="btn_startEncrypt" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="64.0" prefWidth="162.0" styleClass="buttonsApp" text="ENCRYPT" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_startDecrypt" alignment="CENTER" contentDisplay="CENTER" layoutX="147.0" layoutY="165.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="162.0" styleClass="buttonsApp" text="DECRYPT" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_exit" alignment="CENTER" contentDisplay="CENTER" layoutX="153.0" layoutY="210.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="162.0" styleClass="buttonsApp" text="EXIT" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox fx:id="stackOne" alignment="CENTER" prefHeight="343.0" prefWidth="340.0" spacing="20.0">
+               <children>
+                  <Label fx:id="lbl_inputString" text="INPUT STRING">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="txt_inputForCypher" prefHeight="93.0" prefWidth="418.0" promptText="Enter input String here" style="-fx-border-radius: 20px;" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextArea>
+                  <Label fx:id="lbl_cypherString" layoutX="123.0" layoutY="142.0" text="OUTPUT STRING">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="txt_cypherString" editable="false" prefHeight="104.0" prefWidth="418.0" promptText="You Output Cyphed string" style="-fx-border-radius: 20px;" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></TextArea>
+                  <Button fx:id="btn_cypherString" mnemonicParsing="false" onAction="#cypher" prefHeight="35.0" prefWidth="123.0" styleClass="buttonsApp" text="ENCRYPT STRING" />
+               </children>
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
+               <padding>
+                  <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+               </padding>
+            </VBox>
+            <VBox fx:id="stackTwo" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="343.0" prefWidth="340.0" spacing="20.0" visible="false">
+               <children>
+                  <Label fx:id="lbl_inputDecypherString" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="84.0" text="INPUT STRING" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="txt_inputDecypher" prefHeight="99.0" prefWidth="418.0" promptText="Enter Input String Here" style="-fx-border-radius: 20px;" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextArea>
+                  <Label fx:id="lbl_decypher" alignment="CENTER" contentDisplay="CENTER" layoutX="123.0" layoutY="142.0" text="OUTPUT STRING" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="txt_dectypher" prefHeight="111.0" prefWidth="418.0" promptText="Your Decyphed String" style="-fx-border-radius: 20px;" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></TextArea>
+                  <Button fx:id="btn_decypher" mnemonicParsing="false" onAction="#decypher" prefHeight="27.0" prefWidth="127.0" styleClass="buttonsApp" text="DECRYPT STRING" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+               </padding>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
